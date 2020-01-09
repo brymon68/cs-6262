@@ -1,0 +1,366 @@
+Assignment Questionnaire
+========================
+
+NOTE: DO NOT DELETE --> and <--, and place your answers within the marks.
+  Example:
+    -->
+      130.207.7.210, scouter.cc.gatech.edu
+    <--
+
+
+Info
+====
+
+Example:
+  Your GT Login ID: yjang37
+  Your Name: Yeongjin Jang
+
+-->
+  Your GT Login ID:bmontano6
+  Your Name:Bryce Montano
+<--
+
+Stage 1
+=======
+
+1. What is the IP address and the URL of
+the command and control (C2) server of the stage1.exe malware?
+
+Example:
+  IP  : 130.207.7.210
+  URL : http://scouter.cc.gatech.edu/a/b/c
+
+-->
+  IP  : 128.61.240.66
+  URL : Netscan.gtisc.gatech.edu
+<--
+
+
+2. The malware (stage1.exe) hide itself on the task manager,
+by injecting itself into the another process.
+What is the name of the process?
+
+Example:
+  Name: asdf.exe
+
+-->
+  Name:iexplore.exe
+<--
+
+3. List down three commands which can be interpreted by the malware,
+and state the start of the command interpreting function
+and the end address per each commands
+using symbolic execution.
+
+For example
+  Command 1: $attack-the-system
+    Start : 0x401002 (hexadecimal number)
+    End   : 0x444039
+  Command 2: $delete-the-system
+    Start : 0x401002
+    End   : 0x44403a
+  ...
+
+-->
+  Command 1: $download
+    Start : 405190
+    End   : 404f50
+  Command 2: $update
+    Start : 405190
+    End   : 404cd0
+  Command 3: $uninstall
+    Start : 405190
+    End   : 4050c0
+
+<--
+
+4. Which command let the malware download the stage 2 malware (stage2.exe)?
+
+-->
+  Command Name: $download
+<--
+
+5. Where does stage1 malware downloads stage2 malware?
+Specify the IP address and the domain name.
+
+Example:
+  IP    : 143.215.130.108
+  Domain: yeongjin.gtisc.gatech.edu (hint: use nslookup)
+  (e.g., nslookup 143.215.130.108)
+
+-->
+  IP    : 128.61.240.66
+  Domain: netscan.gtisc.gatech.edu
+<--
+
+Stage 2
+=======
+
+1. What is the IP address and the URL of
+the command and control (C2) server of the stage2.exe malware?
+
+Example:
+  IP  : 130.207.7.210
+  URL : http://scouter.cc.gatech.edu/a/b/c
+
+-->
+  IP  : 143.215.130.19
+  URL : http://canof.gtisc.gatech.edu/users/login.php
+<--
+
+
+2. The malware (stage2.exe) hide itself on the task manager,
+by injecting itself into the another process.
+What is the name of the process?
+
+Example:
+  Name: asdf.exe
+
+-->
+  Name: iexplore.exe
+<--
+
+3. List down three commands which can be interpreted by the malware,
+and state the start of the command interpreting function
+and the end address per each commands
+using symbolic execution.
+
+For example
+  Command 1: $attack-the-system
+    Start : 0x401002
+    End   : 0x444039
+  Command 2: $delete-the-system
+    Start : 0x401002
+    End   : 0x44403a
+  ...
+
+-->
+  Command 1: $uPdAtea4cf
+    Start : 404180
+    End   : 404cd0
+  Command 2: $D0wNI0Ada5e2
+    Start : 404180
+    End   : 4052f0
+  Command 3: $Un1N5tAli
+    Start : 404180
+    End   : 4050a0
+
+<--
+
+4. Which command let the malware download the malware payload (payload.exe)?
+
+-->
+  Command Name: $D0wNI0Ada5e2
+<--
+
+
+Payload
+=======
+
+
+1. What is the IP address and the URL of
+the command and control (C2) server of the payload.exe?
+
+Example:
+  IP  : 130.207.7.210
+  URL : http://scouter.cc.gatech.edu/a/b/c
+
+-->
+  IP  : 143.215.130.79
+  URL : http://vcs.gtisc.gatech.edu/server/operate.php
+<--
+
+
+2. The malware (payload.exe) hide itself on the task manager,
+by injecting itself into the another process.
+What is the name of the process?
+
+Example:
+  Name: asdf.exe
+
+-->
+  Name: mspaint.exe
+<--
+
+3. List down three commands which can be interpreted by the malware,
+and state the start of the command interpreting function
+and the end address per each commands
+using symbolic execution.
+
+For example
+  Command 1: $attack-the-system
+    Start : 0x401002
+    End   : 0x444039
+  Command 2: $delete-the-system
+    Start : 0x401002
+    End   : 0x44403a
+  ...
+
+-->
+  Command 1: $connection63e6
+    Start : 405130
+    End   : 406090
+  Command 2: $cardintervalcfae
+    Start : 405130
+    End   : 405ed0
+  Command 3: $launchddosfc25
+    Start : 405130
+    End   : 4061d0
+<--
+
+4. There is a command that makes the payload.exe to check if
+the infected machine has the internet connection.
+What is the URL for that server?
+
+Example:
+  URL : www.cc.gatech.edu/login.php
+
+-->
+  URL : http://vcs.gtisc.gatech.edu/server/operate.php
+<--
+
+5. There is a command that makes the payload.exe to submit
+credit card information stolen from the infected machine
+to a server.
+
+What is the URL for that server, and
+what is the submitted information and card number?
+Please write URL until the extension part, i.e.,
+if the URL is www.google.com/a.php?a=b&c=d,
+then URL is www.google.com/a.php.
+
+For the INFO and CARD,
+all information is on the parameter part of URL,
+e.g, ?a=xxxx&b=yyyy-zzzz-aaaa-bbbb-cccc
+then the INFO is xxxx and
+the card number is yyyy-zzzz-aaaa-bbbb-cccc
+
+Example:
+  URL : www.cc.gatech.edu/a/b/c/some_site.php
+  INFO: xxx-xx-xxxx
+  CARD: 4444-5555-3333-4444-3333
+
+-->
+  URL : http://netscan.gtisc.gatech.edu//drupal/read.php
+  INFO: George P-Bud
+  CARD:7292-2473-1029-0348-0231
+<--
+
+6. There is a command that makes the payload.exe to launch
+the DDoS (Distributed Denial of Service) attack to
+several servers.
+
+Please identify all targets and list down their domain names
+
+Example:
+  DOMAIN1 : gatech.edu
+  DOMAIN2 : georgia.gov
+
+-->
+  DOMAIN1 : apache2-jolly.fairview.dreamhost.com
+  DOMAIN2 : web-plesk5.gatech.edu
+  DOMAIN3 : wenkewww.gtisc.gatech.edu
+  DOMAIN4 : scouter.cc.gatech.edu
+  DOMAIN5 : web-plesk9.gatech.edu
+  DOMAIN6 : netscan.gtisc.gatech.edu
+<--
+
+
+Android Stage 1
+===============
+
+PLEASE READ ~/Android/MaliciousMessenger/writeup.pdf FIRST!
+
+
+1. Find the information of component and intents for receiving
+C&C communication in AndroidManifest.xml. You should provide your
+answer in the format of a tuple. The first item is the component name
+and the second item is an Intent that can trigger it.
+Create a tuple for each type of Intent a component can receive.
+
+Answer format:
+  (MainActivity, android:name=”android.intent.action.MAIN”)
+
+-->
+(IncomingSms, android:name="android.provider.Telephony.SMS_RECEIVED")
+
+<--
+
+2. Create a list of any anti-analysis techniques the app is using.
+Each line in the list should be a tuple. If the anti-analysis technique
+is based on internal information, the first item in the tuple should be
+the class and method/variable name that provided the original information,
+and the second item should be a description of why the info returned from
+this API is useful for identifying the environment.
+
+If the anti-analysis technique is external, the first item should be
+the range of values that can be used to trigger the malicious behavior,
+The second item should be a brief explanation of how the malware is
+leveraging this information to prevent analysis.
+
+Answer formats:
+  Internal check
+
+  (Build.Model, This information allows the app to see the name of the end product. So, it can identify that it is being ran on an emulator);
+
+  External check
+
+  (The application is checking to see if the originating address of the sms has a Chinese country code.)
+
+  ([77], The external environment check is checking the sender's country code)
+-->
+ANSWER HERE
+Internal Checkpoint
+(TelephonyManager.getSystemService("phone"), This type of check is useful as it checks to see if the value returned is equal to null. If it is
+that means that the device is being emulated.)
+
+External Check
+
+<--
+
+3. Identify the necessary commands the C&C server sends to the app.
+The answer format should be a list of commands. Each line should
+be a unique command.
+
+For Stage 1 Task 1, you only need to identify the components that handle
+commands from the C&C. Communication originating from the app is not
+necessary.
+
+-->
+(hey whats up?, Is this Tim?, Oh, sorry wrong number! =()
+<--
+
+
+ANDROID STAGE 2
+===============
+
+1.
+
+If the app is leaking any sensitive information, create a tuple
+that contains the command from the C&C server, the Android API
+that returns the information, and the Android API used to leak the
+information.
+
+For example, if the C&C server sends the command “kfkfasdk”
+to the app and it leaks the user’s phone number through a URL
+connection; the answer would be the following:
+
+  (kfkfasdk, TelephonyManager.getLine1Number, URL.openConnection).
+
+Note, if the sensitive information leaked is from a content provider,
+please provide the URI (ex: content://sms/sent) instead of an API.
+Therefore, if the original answer was leaking (sent) text messages,
+then the answer would be
+
+  (kfkfasdk, content://sms/sent, URL.openConnection)
+
+-->
+(Is this Tim?, android.provider.ContactsContract.CommonDataKinds.Phone, HttpURLConnection)
+(hey whats up?, content://sms/inbox, HttpURLConnection)
+<--
+
+2. There is a text message from C&C that makes malware sends
+SMS message to a premium number. Find out that number.
+-->
+666546
+<--

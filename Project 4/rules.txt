@@ -1,0 +1,14 @@
+#DDOS
+alert tcp any any <> any any (msg: "DDOS"; \
+flowbits:set,foo; detection_filter: track by_dst, count 230, seconds 2; GID:1$
+
+#DDOS
+#alert tcp any any <> any any (msg:"DDOS stuff"; \
+#flow:to_server,established; content:"GET"; nocase; http_method; \
+#detection_filter:track by_dst, count 40, seconds 1; metadata: service http; $
+
+#CNC
+#alert tcp any any <> any any (msg: "CNC"; content: "botSELECT *"; GID:1; sid$
+
+#bad scan
+#alert tcp any any <> any any (flags: FPU; msg:"BADSCAN"; sid:40006; rev:001;)

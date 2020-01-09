@@ -1,0 +1,3 @@
+sudo zmap -p 443 -o bmontano6-report-1ht-443.txt -w ~/Downloads/ip_addresses.txt --vpn -i cscotun0
+sudo zmap -p 80 -o bmontano6-report-1ht-80.txt -w ~/Downloads/ip_addresses.txt --vpn -i cscotun0
+sudo zmap -p 80 -n 100000 -o bmontano6-report-random1ht.txt -b ~/p1.2/blacklist.txt --vpn -i cscotun0

@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head> <title>frame-busting page</title>
+</head>
+<body>
+<p>This page incorporates the basic frame-busting technique:
+<pre>if(top != self) top.location.href = location.href;</pre>
+<p> Your job is to frame this page in the index.html :)
+
+<style type="text/css">
+	p { color: red;}
+	pre { color: red;}
+</style>
+<script>if(top != self) top.location.href = location.href;
+console.log(top)
+console.log(self)
+console.log(top.location.href);
+console.log(location.href);</script>
+</body>
+</html>

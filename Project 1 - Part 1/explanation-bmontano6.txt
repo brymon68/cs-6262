@@ -1,0 +1,16 @@
+VSFTPD is an FTP server ran on Linux. In July of 2011, a mistakenly-uploaded version (v2.3.4) of VSFTPD hit the web with a backdoor vulnerability that allowed a user to enter a ":)" smiley face as the username. Upon entering the smiley face, a shell is established via a TCP callback. I was able to confirm this by, once I had been successful in achieving a shell, I ran:
+
+lsof -i :6200
+
+and the coressponding output:
+
+sh      4828 root    0u  IPv4  12686       TCP 12.0.0.2:6200->12.0.0.3:46139 (ESTABLISHED)
+sh      4828 root    1u  IPv4  12686       TCP 12.0.0.2:6200->12.0.0.3:46139 (ESTABLISHED)
+sh      4828 root    2u  IPv4  12686       TCP 12.0.0.2:6200->12.0.0.3:46139 (ESTABLISHED)
+
+A shell had clearly been established on port 6200.
+
+Sources:
+
+1. "Vulnerability & Exploit Database." VSFTPD V2.3.4 Backdoor Command Execution | Rapid7. Rapid7, n.d. Web. 20 Jan. 2017.
+2. Evans, Chris. "Alert: Vsftpd Download Backdoored." Alert: Vsftpd Download Backdoored. N.p., 03 July 2011. Web. 20 Jan. 2017.

@@ -1,0 +1,4 @@
+spool msf.log
+# write your commands here (delete this line!)
+exploit -z
+exit -y
